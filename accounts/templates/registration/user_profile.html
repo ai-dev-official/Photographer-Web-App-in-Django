@@ -29,7 +29,7 @@
           
             <div class="top-container">
                 {% if user.profile.profile_image %}  
-                {% comment %} <div class="p-image"><img src= "{{ profile.profile_image.url }}" alt="profile image"/></div> {% endcomment %}
+                <div class="p-image"><img src= "{{ profile.profile_image.url }}" alt="profile image"/></div>
                 {% else %}
                 <div class="p-image"><img src="{% static './images/avatar.png' %}" alt="profile avatar"></div>
                 {% endif %}
