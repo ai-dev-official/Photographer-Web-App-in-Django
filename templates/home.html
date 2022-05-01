@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block title %}Home{% endblock title %}
 
 {% block content %}
@@ -20,7 +23,7 @@
             <div class="row text-center about-card">
              <div class="col-md-4 team">
                <div class="card text-center">
-                <img src="../images/skyle.jpg" alt=""  class="rounded-circle">
+                <img src="{% static './images/skyler.webp' %}" alt=""  class="">
                 <h2>Jane Marlen</h2>
                 <p>Director of Works</p>
                </div>
@@ -28,7 +31,7 @@
      
              <div class="col-md-4 team">
               <div class="card">
-               <img src="../images/skyle.jpg" alt=""  class="rounded-circle">
+               <img src="{% static './images/skyler.webp' %}" alt=""  class="">
                <h2>Jane Marlen</h2>
                <p>Director of Works</p>
               </div>
@@ -36,7 +39,7 @@
      
             <div class="col-md-4 team mb-5">
               <div class="card">
-               <img src="../images/skyle.jpg" alt=""  class="rounded-circle">
+               <img src="{% static './images/skyler.webp' %}" alt=""  class="">
                <h2>Jane Marlen</h2>
                <p>Director of Works</p>
               </div>
@@ -50,27 +53,27 @@
             <div class="row text-center about-card">
              <div class="col-md-6 team2">
                <div class="card">
-                <img src="../images/cdoncel.jpg" alt="">
+                <img src="{% static './images/cdoncel.webp' %}" alt="">
                 <p>Director of Works</p>
                </div>
              </div>
      
              <div class="col-md-6 team2">
               <div class="card">
-               <img src="../images/cdoncel.jpg" alt="">
+               <img src="{% static './images/cdoncel.webp' %}" alt="">
                <p>Director of Works</p>
               </div>
             </div>
      
             <div class="col-md-6 team2">
               <div class="card">
-               <img src="../images/cdoncel.jpg" alt="">
+               <img src="{% static './images/cdoncel.webp' %}" alt="">
                <p>Director of Works</p>
               </div>
             </div>
             <div class="col-md-6 team2 mb-5">
               <div class="card">
-               <img src="../images/cdoncel.jpg" alt="">
+               <img src="{% static './images/cdoncel.webp' %}" alt="">
                <p>Director of Works</p>
               </div>
             </div>
@@ -78,27 +81,27 @@
             <div class="row text-center about-card">
               <div class="col-md-3 team">
                 <div class="card">
-                 <img src="../images/cdoncel.jpg" alt="">
+                 <img src="{% static './images/cdoncel.webp' %}" alt="">
                  <p>Director of Works</p>
                 </div>
               </div>
       
               <div class="col-md-3 team">
                <div class="card">
-                <img src="../images/cdoncel.jpg" alt="">
+                <img src="{% static './images/cdoncel.webp' %}" alt="">
                 <p>Director of Works</p>
                </div>
              </div>
       
              <div class="col-md-3 team">
                <div class="card">
-                <img src="../images/cdoncel.jpg" alt="">
+                <img src="{% static './images/cdoncel.webp' %}" alt="">
                 <p>Director of Works</p>
                </div>
              </div>
              <div class="col-md-3 team mb-5">
                <div class="card">
-                <img src="../images/cdoncel.jpg" alt="">
+                <img src="{% static './images/cdoncel.webp' %}" alt="">
                 <p>Director of Works</p>
                </div>
              </div> 
@@ -113,31 +116,31 @@
             <div class="row text-center about-card">
               <div class="col-md-2 team1">
                
-                 <img src="../images/brand5.png" alt="">
+                 <img src="{% static './images/brand1.webp' %}" alt="">
                
               </div>
               
             <div class="col-md-2 team1">
               
-              <img src="../images/brand2.png" alt="">
+              <img src="{% static './images/brand2.webp' %}" alt="">
              
            </div>
      
              <div class="col-md-2 team1">
              
-               <img src="../images/brand3.png" alt="">
+               <img src="{% static './images/brand3.webp' %}" alt="">
            
             </div>
 
             <div class="col-md-2 team1">
               
-              <img src="../images/brand1.png" alt="">
+              <img src="{% static './images/brand4.webp' %}" alt="">
           
            </div>
 
             <div class="col-md-2 team1">
                
-              <img src="../images/brand4.png" alt="" >
+              <img src="{% static './images/brand5.webp' %}" alt="" >
           
            </div>
      

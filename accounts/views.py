@@ -69,7 +69,7 @@ class UserEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.profile
 
-
+@login_required
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jptv((pmo!nz(gos0#-qfn17xsr6(uhh)&=a17$5@w+x65xv1@
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'infinite-inlet-37223.herokuapp.com'
+    # 'infinite-inlet-37223.herokuapp.com'
 ]
 
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_comments',
 
     # local
     'accounts.apps.AccountsConfig',
