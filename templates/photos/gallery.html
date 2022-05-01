@@ -92,7 +92,7 @@
           <div class="btn-group  mt-2">
             <a href="{% url 'photo' photo.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
             {% if user.id == photo.author.id or user.is_superuser %}
-            <a href="{% url 'photo_edit' photo.id %}" type="button" class="btn btn-sm btn-outline-secondar">Edit</a>
+            <a href="{% url 'photo_edit' photo.id %}" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
             {% endif %}
           </div>
           {% endif %}
