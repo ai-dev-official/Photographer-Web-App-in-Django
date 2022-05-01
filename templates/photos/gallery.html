@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block title %}Photo Gallery{% endblock title %}
+
+{% block content %}
+<div class="container-fluid no-gutters mtop">
+  <div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../images/thanos.jpg" alt="" style="width:100vw; max-height: 100vh; object-fit:cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="../images/cdoncel.jpg" alt="..." style="width:100vw; max-height: 100vh; object-fit:cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="../images/khamkeo.jpg" alt="..." style="width:100vw; max-height: 100vh; object-fit:cover;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="false"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-3 no-gutters ">
+
+    </div>
+
+    <div class="col-6 col-md-6 col-sm-4 no-gutters">
+
+
+      <div class="my-3  justify-content-center text-dark navbar-collapse">
+        <ul class="nav">
+          <a href="{% url 'add' %}" class="btn btn-sm btn-outline-secondary btn-small m-1 text-dark">Upload Photo</a>
+
+          {% for category in categories %}
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a>
+          </li>
+          {% endfor %}
+          <li class="nav-item text-dark">
+            <a class="nav-link active text-dark" aria-current="true" href="{% url 'gallery' %}">All Locations</a>
+          </li>
+
+        </ul>
+      </div>
+
+
+    </div>
+
+    <div class="col-3 no-gutters ">
+
+    </div>
+  </div>
+  <div class="row no-gutters">
+    {% for photo in photos %}
+    <div class="col-md-4 col-sm-6 col-xs-6 no-gutters border p-gallery">
+      <div class="card shadow-0 m-5">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{{photo.image.url}}" class="img-fluid card-img-top imag-thumbnail" />
+          <small class="imag-author">{{photo.author}}</small>
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+          </a>
+        </div>
+
+      </div>
+      <div class="card-body p-5">
+        <h5 class="card-title">{{photo.title}}</h5>
+        <small class="card-text">{{photo.category.name}}</small>
+        <div class="d-flex justify-content-between align-items-center">
+          {% if user.is_authenticated%}
+          {% if user.id == photo.author.id %}
+          <div class="btn-group  mt-2">
+            <a href="{% url 'photo' photo.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+            <a href="{% url 'photo_edit' photo.id %}" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+          </div>
+          {% endif %}
+          {% endif %}
+          <small class="text-muted photo-date">Updated: {{photo.date}}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <!-- Grid container -->
+  <div class="container-fluid no-gutters">
+
+    <!-- Section: Images -->
+    <section class="sect-img no-gutters">
+      <div class="row">
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay hover-zoom hover-shadow ripple" data-ripple-color="light">
+            <img src="../images/photo.jpg" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+            <img src="../images/skyler.jpg" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+            <img src="../images/design.jpg" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+            <img src="../images/daria.jpg" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+            <img src="../images/thanos.jpg" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+          <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+            <img src="../images/Frame-47.png" class="w-100" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Images -->
+  </div>
+
+
+
+
+
+</div>
+
+{% endblock content %}

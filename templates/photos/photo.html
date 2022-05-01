@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load comments %}
+{% block title %}Photo{% endblock title %}
+
+{% block content %}
+<section class="banner2 mtop pb-5" id="banner">
+    <div class="content">
+        <h2>Always Choose Good</h2>
+        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dalore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud.</p>
+        <a href="{% url 'booking' %}" class="btn btn-light btn-rounded bk_ap">Book Appointment</a>
+    </div>
+</section>
+<main role="main" class="container-fluid m-5">
+
+    <div class="row">
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+
+
+        <div class="col-7 col-md-5 col-xs-12 col-sm-12 blog-main m-5 mtop">
+            <a class="btn btn-sm btn-outline-secondary mb-2" href="{% url 'gallery' %}">Go Back</a>
+
+
+            <div>
+                <img src="{{photo.image.url}}" alt="Microscope" id="myImg" class="img-fluid"
+                    style="width:100%;max-width:1900px" />
+                <div id="myModal" class="modal col">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </div>
+
+
+        </div><!-- /.blog-main -->
+        
+        <aside class="col-3 col-md-5 col-sm-12 col-xs-12 blog-sidebar border-left mx-5">
+            <h4 class="font-italic font-weight-bolder">PHOTO DETAILS</h4>
+            <hr>
+            <div class="card p-4 my-3 bg-light rounded">
+
+                <div class="p-4 mb-3  rounded">
+
+
+
+                    <div class="">
+                        <h4>{{photo.title}}</h4>
+                    </div>
+
+                    
+    <br>
+    <hr> <br>
+
+    <form action="{% url 'like_photo' photo.id %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" name="photo_id" value="{{ photo.id }}"
+        class="btn btn-sm btn-outline-secondary">Like</button> - {{ total_likes }} Likes
+
+
+    </form>
+
+
+                    <small class="text-muted photo-date"> Last updated {{photo.date}} by {{photo.author}}</small>
+
+
+                    <p class="brand-text mt-3">{{photo.description}}</p>
+                    <p class="card-text py-4">
+                        This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-4 mb-3  rounded">
+               
+                <h4 class="font-italic font-weight-bolder">{{ comments_count }} COMMENTS</h4>
+                <hr>
+                {% for comment in photo.comments.all %}
+                <div class="card p-4 my-3 bg-light rounded">
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            {{ comment.author }}
+                            <span class=" text-muted font-weight-normal">
+                                {{ comment.created_on }}
+                            </span>
+                        </p>
+                        {{ comment.body | linebreaks }}
+                    </div>
+                </div>
+
+                {% endfor %}
+
+                <div class="card-body">
+                    {% get_comment_form for photo as form %}
+                    {% if new_comment %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting moderation
+                    </div>
+                    {% else %}
+                    <h3>Leave a comment</h3>
+                    {% get_comment_form for photo as form %}
+                    <form action="{% comment_form_target %}" method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="row"><button type="submit" name="submit" value="Post" class="btn btn-primary  btn-lg col-md-5 ">Submit</button>
+                            <button  type="submit" name="preview" value="Preview" class="btn btn-outline-secondary  btn-lg col-md-5">Preview</button></div>
+                        
+                    </form>
+                    {% endif %}
+
+            
+                    
+                </div>
+            
+
+                <!-- <h4 class="font-italic">Comments</h4>
+                <form method="post">
+                    {%csrf_token %}
+                    <H2> Comment Here</H2>
+                    {{form.as_p}}
+                    <input type ="submit" value="comment">
+                </form> -->
+            </div>
+
+            
+
+        </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+{% endblock content %}

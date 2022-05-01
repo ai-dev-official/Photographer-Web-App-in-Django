@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section class="banner mtop pb-5" id="banner">
+    <div class="content">
+        <h2>Always Choose Good</h2>
+        <p>Lorem ipsum dolor sit amet, consectur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dalore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud.</p>
+        <a href="{% url 'booking' %}" class="btn btn-outline-primary btn-rounded bk_ap">Book Appointment</a>
+    </div>
+</section>
+
+
+<section class="about" id="about">
+    <div class="row">
+    <div class="col50">
+        <h2 class="titleText"><span>A</span>bout Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu luctus tortor. 
+            Praesent et faucibus mi, ut finibus metus. Integer pulvinar nulla maximus 
+            velit sollicitudin consequat. Phasellus efficitur fermentum nulla nec tincidunt.
+             Maecenas sed erat a tortor fringilla tempor at vitae justo. Fusce quis pharetra lorem. 
+             Donec lobortis lorem pellentesque nibh laoreet, eget pretium massa posuere. 
+             Maecenas tristique vel est at vehicula. Nunc dolor justo, fermentum eget odio eget, <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu luctus tortor. 
+            Praesent et faucibus mi, ut finibus metus. Integer pulvinar nulla maximus 
+            velit sollicitudin consequat. Phasellus efficitur fermentum nulla nec tincidunt.
+             Maecenas sed erat a tortor fringilla tempor at vitae justo. Fusce quis pharetra lorem. 
+             Donec lobortis lorem pellentesque nibh laoreet, eget pretium massa posuere.  </p>
+        </div>
+    
+
+        <div class="col50">
+            <div class="imgBx">
+                <img src="../images/laura.jpg" alt="">
+            </div>
+        </div>
+    
+    </section>
+{% endblock content %}
+
+<script>
+
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("banner").style.height = "50%";
+  } else {
+    document.getElementById("banner").style.width = "50%";
+  }
+}
+
+
+</script>
