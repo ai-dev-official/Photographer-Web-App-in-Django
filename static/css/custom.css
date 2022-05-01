@@ -803,3 +803,7 @@ main .main-login, main .btn {
   .nav_button {
     padding: 5px 15px;
   }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    margin-right: 20px;
+  }
