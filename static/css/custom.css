@@ -50,6 +50,9 @@
 .navbar {
   background-color: #fff0;
   color: var(--light-color);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 2rem;
   /* -webkit-box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
   -moz-box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15); */
@@ -963,6 +966,7 @@ main .main-login, main .btn {
     .sticky {
       padding-left: 5rem;
       padding-right: 5rem;
+      padding-top: 2rem !important;
     }
     
   }
