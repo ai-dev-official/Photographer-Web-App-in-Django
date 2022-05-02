@@ -434,7 +434,7 @@
 
 .profile-image {
   border-radius: 50%;
-  border: 2px solid #5957f9
+  border: 2px solid #007bff;
 }
 
 .name {
@@ -458,11 +458,11 @@
 }
 
 .middle-container:hover {
-  border: 1px solid #5957f9
+  border: 1px solid #007bff;
 }
 
 .dollar-div {
-  background-color: #5957f9;
+  background-color: #007bff;
   padding: 12px;
   border-radius: 10px
 }
@@ -480,7 +480,7 @@
 
 .dollar {
   font-size: 16px !important;
-  color: #5957f9 !important;
+  color: #007bff;!important;
   font-weight: bold !important
 }
 
@@ -491,7 +491,7 @@
 }
 
 .amount {
-  color: #5957f9;
+  color: #007bff;
   font-size: 16px;
   font-weight: bold
 }
@@ -503,7 +503,7 @@
 }
 
 .recent-border {
-  border-left: 2px solid #5957f9;
+  border-left: 2px solid #007bff;
   display: flex;
   align-items: center
 }
@@ -515,7 +515,7 @@
 .recent-orders {
   font-size: 16px;
   font-weight: 700;
-  color: #5957f9;
+  color: #007bff;
   margin-left: 2px
 }
 
