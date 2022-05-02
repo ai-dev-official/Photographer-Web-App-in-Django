@@ -28,7 +28,7 @@
     <div class="col-md-7 blog-main m-5 mtop">
           
             <div class="top-container">
-                {% user.profile.profile_image %}
+                {% if user.profile.profile_image %}
                 <div class="p-image"><img src= "{{ user.profile.profile_image.url }}"/></div>
                 {% else %}
                 <div class="p-image"><img src= "{% static './images/avatar.png' %}"/></div>
