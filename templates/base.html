@@ -36,7 +36,7 @@
               class="sr-only">(current)</span></a></li>
             {% comment %} <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link text-uppercase">What We Do</a></li> {% endcomment %}
             <li class="nav-item"><a href="{% url 'about' %}" class="nav-link text-uppercase">Connect</a></li>
-            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link text-uppercase">Contact Us</a></li>
+            <li class="nav-item"><a href="{% url 'accounts:customer_service' %}" class="nav-link text-uppercase">Customer Service</a></li>
           </ul>
           {% if user.is_authenticated %}
 
@@ -64,7 +64,7 @@
         </ul>
           {% endif %}
 
-          <a href="{% url 'booking' %}" class="btn btn-outline-secondary btn-rounded nav_button">Book Appointment</a>
+          <a href="{% url 'contact' %}" class="btn btn-outline-secondary btn-rounded nav_button">Book Appointment</a>
         </div>
       </div>
     </nav>
