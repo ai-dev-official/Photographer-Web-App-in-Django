@@ -48,8 +48,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = '__all__'
-        exclude = ('user',)
+        fields = ['profile_image', 'date_of_birth', 'fav_author', 'description', 'hobbies', 'city', 'phone', 'website']
 
 
 class SignUpForm(UserCreationForm):

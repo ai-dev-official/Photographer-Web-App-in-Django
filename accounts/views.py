@@ -1,5 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.models import User
+
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required 
@@ -42,7 +41,7 @@ def signup(request):
 
 
 @login_required
-def profile(request):
+def myprofile(request):
     return render(request, 'registration/user_profile.html')
 
 
@@ -57,7 +56,7 @@ def profile(request):
 #     return render(request, 'registration/user_profile.html')
 
 
-class UserEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UserEditView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
     fields = '__all__'
@@ -66,8 +65,7 @@ class UserEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_object(self):
         return self.request.user.profile
 
-    def test_func(self):
-        return self.request.user.profile
+  
 
 @login_required
 def contact(request):
