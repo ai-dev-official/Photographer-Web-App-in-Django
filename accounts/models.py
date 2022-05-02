@@ -14,14 +14,14 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(
         User, null=True, on_delete=models.CASCADE)
-    profile_image = models.ImageField(default='', upload_to='static/images/', null=True, blank=True)
-    date_of_birth = models.DateField(null=False, blank = False, default='')
-    fav_author = models.CharField(max_length=255, default='')
-    description = models.CharField(max_length=1000, default='')
-    hobbies = models.CharField(max_length=50, default='')
-    city = models.CharField(max_length=50, default='')
-    phone = models.IntegerField(default=0)
-    website = models.URLField(default='')
+    profile_image = models.ImageField(default='static/images/avatar.png', upload_to='static/images/', null=True, blank=True)
+    date_of_birth = models.DateField(null=False, blank = False)
+    fav_author = models.CharField(max_length=255, null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    hobbies = models.CharField(max_length=50, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True)
+    phone = models.IntegerField(max_length=25, null=True, blank=True)
+    website = models.URLField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return '%s' % self.user.username
