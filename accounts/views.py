@@ -98,9 +98,7 @@ def contact(request):
 #     model = Profile
 #     template_name = 'registration/user_profile.html'
 #     success_url = reverse_lazy('home')
-
 #     def get_object(self):
 #         return self.request.user
-
 #     def test_func(self):
 #         return self.request.user.profile

@@ -28,7 +28,11 @@
     <div class="col-md-7 blog-main m-5 mtop">
           
             <div class="top-container">
+                {% user.profile.profile_image %}
                 <div class="p-image"><img src= "{{ user.profile.profile_image.url }}"/></div>
+                {% else %}
+                <div class="p-image"><img src= "{% static './images/avatar.png' %}"/></div>
+                {% endif %}
                 <div class="ml-3">
                     <h5 class="name">{{ user.profile }}</h5>
                     <p class="mail">{{ user.email }}</p>
