@@ -807,3 +807,159 @@ main .main-login, main .btn {
   .navbar-expand-lg .navbar-nav .nav-link {
     margin-right: 20px;
   }
+
+  
+
+  @media screen and ( min-width: 200px){
+
+    #logo {
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    nav .fa {
+      font-size: 14px;
+    }
+
+    .nave-menu{
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: -20px;
+    }
+
+    .navbar .mx-5 {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .navbar-brand {
+      padding-top: 0;
+    }
+
+    .navbar-collapse:active {
+      background: white;
+      padding: 16px;
+      border: 1px solid #ddd;
+    }
+
+    .sticky #logo {
+      margin-top: -8px;
+    }
+
+    .col3-remove {
+      width: 1  !important;
+    }
+
+    .col6-add {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      line-height: 10px !important;
+      font-size: 11px !important;
+    }
+
+    .btn-add-col{
+      width: 100%;
+    }
+
+    .card-m-add {
+      margin: 1rem !important;
+    }
+
+    .p-gallery .p-5 {
+        padding: 0 !important;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 14px;
+      line-height: 12px;
+    }
+
+    .photo-date {
+
+      margin-left: 40px;
+    }
+
+    .btn-group-sm > .btn, .btn-sm {
+      padding: .1rem .3rem;
+    }
+
+    .sect-img {
+      display: none;
+    }
+
+    .footer {
+      padding: 2rem 0 !important;
+    }
+
+    .footer-h5 {
+      font-size: 1rem;
+    }
+
+    .footer-btn {
+      margin: 1rem 0 !important;
+    }
+
+    footer ul li, footer ul li a {
+      font-size: 12px !important;
+    }
+
+    .copyright {
+      margin-left: 14px;
+    }
+
+    .nav_button {
+      font-size: 14px;
+    }
+
+  }
+
+  @media screen and (min-width:300px){
+
+    .card-m-add {
+      margin: 2rem !important;
+    }
+
+    .footer {
+      padding: 2rem .9rem !important;
+    }
+
+  }
+
+
+  
+  @media screen and (min-width:578px){
+    .btn-add-col{
+      width: 9rem !important;
+    }
+
+    .display-1 {
+      font-size: 4rem;
+
+    }
+
+    .sect-img {
+      display: none;
+    }
+    
+    
+  }
+
+  @media screen and (min-width:1024px){
+
+    .card-m-add {
+      margin: 3rem !important;
+    }
+
+    .col6-add {
+      margin-left: 3.5rem;
+    }
+    
+  }
+    
+  
