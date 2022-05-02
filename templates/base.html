@@ -45,8 +45,8 @@
               <a href="#" class="nav-link dropdown-toggle text-uppercase"
                 data-bs-toggle="dropdown">{{user.username}}</a>
               <div class="dropdown-menu dropdown-menu-end">
-                <a href="{% url 'accounts:accounts:profile' %}" class="dropdown-item">View Profile</a>
-                <a href="{% url 'accounts:accounts:edit_profile' %}" class="dropdown-item">Edit Profile</a>
+                <a href="{% url 'accounts:myprofile' %}" class="dropdown-item">View Profile</a>
+                <a href="{% url 'accounts:edit_profile' %}" class="dropdown-item">Edit Profile</a>
                 <a href="{% url 'password_change'%}" class="dropdown-item">Change Password</a>
                 <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
               </div>
@@ -120,7 +120,7 @@
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="{% url 'login' %}">Log In</a></li>
           <li><a class="text-muted" href="{% url 'accounts:signup' %}">Sign Up</a></li>
-          <li><a class="text-muted" href="{% url 'accounts:profile' %}">My Profile</a></li>
+          <li><a class="text-muted" href="{% url 'accounts:myprofile' %}">My Profile</a></li>
           <li><a class="text-muted" href="{% url 'accounts:edit_profile' %}">Edit Profile</a></li>
         </ul>
       </div>
