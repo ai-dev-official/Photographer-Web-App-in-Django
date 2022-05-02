@@ -863,7 +863,7 @@ main .main-login, main .btn {
     }
 
     .card-m-add {
-      margin: 1rem !important;
+      margin: 2rem !important;
     }
 
     .p-gallery .p-5 {
@@ -922,7 +922,7 @@ main .main-login, main .btn {
   @media screen and (min-width:300px){
 
     .card-m-add {
-      margin: 2rem !important;
+      margin: 3rem !important;
     }
 
     .footer {
@@ -953,7 +953,7 @@ main .main-login, main .btn {
   @media screen and (min-width:1024px){
 
     .card-m-add {
-      margin: 3rem !important;
+      margin: 5rem !important;
     }
 
     .col6-add {
