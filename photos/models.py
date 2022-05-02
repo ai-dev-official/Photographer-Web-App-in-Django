@@ -23,6 +23,8 @@ class Photo(models.Model):
     image = models.ImageField(null=True, blank=True, default='')
     description = models.TextField()
     date = models.DateTimeField(auto_now=True)
+    visits = models.IntegerField(default=0)
+    last_visit = models.DateTimeField(blank=True, null=True)
     author = models.ForeignKey(
         User,
         default=None,
