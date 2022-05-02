@@ -959,6 +959,11 @@ main .main-login, main .btn {
     .col6-add {
       margin-left: 3.5rem;
     }
+
+    .sticky {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
     
   }
     
