@@ -76,6 +76,8 @@
             </div>
 
             <div class="p-4 mb-3  rounded">
+
+                {% get_comment_count for photo as comment_count %}
                
                 <h4 class="font-italic font-weight-bolder">{{ comment_count }} COMMENTS</h4>
                 <hr>
