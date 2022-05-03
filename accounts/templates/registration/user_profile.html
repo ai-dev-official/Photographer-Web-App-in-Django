@@ -1,5 +1,8 @@
 
 {% extends 'base.html' %}
+
+{% load static %}
+
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
@@ -28,10 +31,10 @@
     <div class="col-md-7 blog-main m-5 mtop">
           
             <div class="top-container">
-                {% if user.profile.profile_image %}  
-                <div class="p-image"><img src= "{{ profile.profile_image.url }}" alt="profile image"/></div>
+                {% if user.profile.profile_image %}
+                <div class="p-image"><img src= "{{ user.profile.profile_image.url }}"/></div>
                 {% else %}
-                <div class="p-image"><img src="{% static './images/avatar.png' %}" alt="profile avatar"></div>
+                <div class="p-image"><img src= "{% static './images/avatar.png' %}"/></div>
                 {% endif %}
                 <div class="ml-3">
                     <h5 class="name">{{ user.profile }}</h5>
@@ -96,7 +99,7 @@
 
             
             <div class="recent-border mt-4"> <span class="recent-orders"></span> </div>
-             <button class="btn btn-sm btn-outline-secondary mt-3"><a href="{% url 'edit_profile' user.profile.pk %}" class="dropdown-item">Edit Profile</a></button>
+             <button class="btn btn-sm btn-outline-secondary mt-3"><a href="{% url 'accounts:edit_profile' %}" class="dropdown-item">Edit Profile</a></button>
            
      
 
@@ -114,28 +117,15 @@
               
               <p class="brand-text mt-3">{{photo.description}}</p>
               <p class="card-text py-4">
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
+                  
+
+                It’s critical for the crocodile to understand its prey and to know where to look for it and remain calm and patient until it arrives. As traders, we have to know what our trading edge looks like and where to look for it and then control ourselves enough to not over-trade before it arrives.
+                Nial Fuller
+
               </p>
           </div>
 
-          <div class="p-4">
-              <h4 class="font-italic">Archives</h4>
-              <ol class="list-unstyled mb-0">
-                <li><a href="#">March 2014</a></li>
-                <li><a href="#">February 2014</a></li>
-                <li><a href="#">January 2014</a></li>
-                <li><a href="#">December 2013</a></li>
-                <li><a href="#">November 2013</a></li>
-                <li><a href="#">October 2013</a></li>
-                <li><a href="#">September 2013</a></li>
-                <li><a href="#">August 2013</a></li>
-                <li><a href="#">July 2013</a></li>
-                <li><a href="#">June 2013</a></li>
-                <li><a href="#">May 2013</a></li>
-                <li><a href="#">April 2013</a></li>
-              </ol>
-            </div>
+        
      
     </aside><!-- /.blog-sidebar -->
 

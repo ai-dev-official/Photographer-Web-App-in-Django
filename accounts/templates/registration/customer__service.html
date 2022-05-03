@@ -6,13 +6,19 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-    
+<section class="banner2 mtop pb-5" id="banner">
+    <div class="col-md-12 mx-auto" >
+        <h1 class="display-1 text-center text-white fw-bold">Customer Service</h1>
+    </div>
+  </section>
 
     <section class="accessory section bd-container" id="accessory">
       <div class="category__container   main__container container__grid">
-        
+        <h1 style="margin-left:80px">Customer Service</h1>
+        <br>
+
 <div style="margin:80px">
-    <h1>Customer Service</h1>
+    
     <form method="post">
         {% csrf_token %}
         

@@ -15,7 +15,7 @@
 
 <body>
     {% load crispy_forms_tags %}
-
+    
     <main role="main" class="inner cover">
         <form method="post">
             {% csrf_token %}
@@ -32,21 +32,21 @@
 
                 <div class="col">
                     <!-- Simple link -->
-                    <a href="{% url 'password_change' %}">Forgot password?</a>
+                    <a href="#!">Forgot password?</a>
                 </div>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block text-uppercase">Sign in</button>
             <!-- Register buttons -->
             <div class="text-center">
                 <p>Not a member? <a href="{% url 'accounts:signup' %}">Register</a></p>
             </div>
         </form>
     </main>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+ 
 </body>
 
 </html>

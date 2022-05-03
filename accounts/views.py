@@ -45,15 +45,15 @@ def myprofile(request):
     return render(request, 'registration/user_profile.html')
 
 
-# @login_required
-# def get_or_create_profile(request):
-#     profile = None
-#     user = request.user
-#     try:
-#         profile, created = Profile.objects.get_or_create(user=user)
-#     except Profile.DoesNotExist:
-#         profile = Profile.objects.create(user, ...)
-#     return render(request, 'registration/user_profile.html')
+@login_required
+def get_or_create_profile(request):
+    profile = None
+    user = request.user
+    try:
+        profile, created = Profile.objects.get_or_create(user=user)
+    except Profile.DoesNotExist:
+        profile = Profile.objects.create(user, ...)
+    return render(request, 'registration/user_profile.html')
 
 
 class UserEditView(UpdateView):

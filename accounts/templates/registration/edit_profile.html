@@ -20,7 +20,7 @@
       {% if user.is_authenticated %}
       <h3>Edit Profile</h3>
       <br />
-      <form class="border p-5" method="POST" enctype="multipart/form-data">
+      <form class="border p-5" method="POST">
         {% csrf_token %} 
         {{ form|crispy }}
         <input class="btn btn-success" type="submit" value="Update Profile" />
@@ -41,28 +41,15 @@
 
         <p class="brand-text mt-3">{{photo.description}}</p>
         <p class="card-text py-4">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
+          
+
+          It’s critical for the crocodile to understand its prey and to know where to look for it and remain calm and patient until it arrives. As traders, we have to know what our trading edge looks like and where to look for it and then control ourselves enough to not over-trade before it arrives.
+          Nial Fuller
+
         </p>
       </div>
 
-      <div class="p-4">
-        <h4 class="font-italic">Archives</h4>
-        <ol class="list-unstyled mb-0">
-          <li><a href="#">March 2014</a></li>
-          <li><a href="#">February 2014</a></li>
-          <li><a href="#">January 2014</a></li>
-          <li><a href="#">December 2013</a></li>
-          <li><a href="#">November 2013</a></li>
-          <li><a href="#">October 2013</a></li>
-          <li><a href="#">September 2013</a></li>
-          <li><a href="#">August 2013</a></li>
-          <li><a href="#">July 2013</a></li>
-          <li><a href="#">June 2013</a></li>
-          <li><a href="#">May 2013</a></li>
-          <li><a href="#">April 2013</a></li>
-        </ol>
-      </div>
+     
     </aside>
     <!-- /.blog-sidebar -->
   </div>
