@@ -35,6 +35,12 @@
                 </div>
             </div>
 
+            <form action="{% url 'like_photo' photo.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="photo_id" value="{{ photo.id }}"
+                    class="btn btn-sm btn-outline-secondary">Like</button> 
+                </form> 
+
 
         </div><!-- /.blog-main -->
         
@@ -52,26 +58,22 @@
                     </div>
 
                     
-    <br>
-    <hr> <br>
+                    <br>
+                    <hr>
 
-    <form action="{% url 'like_photo' photo.id %}" method="POST">
-      {% csrf_token %}
-      <button type="submit" name="photo_id" value="{{ photo.id }}"
-        class="btn btn-sm btn-outline-secondary">Like</button> - {{ total_likes }} Likes
+                    <div class="">
+                        {{ total_likes }} Likes
+                    </div>
+                    
 
-
-    </form> 
+                    <hr>
 
 
                     <small class="text-muted photo-date"> Last updated {{photo.date}} by {{photo.author}}</small>
 
 
                     <p class="brand-text mt-3">{{photo.description}}</p>
-                    <p class="card-text py-4">
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
-                    </p>
+                   
                 </div>
             </div>
 
