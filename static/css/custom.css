@@ -36,7 +36,7 @@
     border: none;
   }
 
-  #comment-preview {
+  #comment-preview, #id_honeypot, #div_id_honeypot {
     display: none;
   }
 
