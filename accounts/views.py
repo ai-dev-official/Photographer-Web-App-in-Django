@@ -36,7 +36,7 @@ def signup(request):
         form = SignUpForm()
         profileform = ProfileForm()
 
-    return render(request, 'registration/register.html', {'form': form, 'profileform': profileform})
+    return render(request, 'registration/signup.html', {'form': form, 'profileform': profileform})
 
 
 
@@ -60,7 +60,7 @@ class UserEditView(UpdateView):
     model = Profile
     template_name = 'registration/edit_profile.html'
     fields = '__all__'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('accounts:myprofile')
 
     def get_object(self):
         return self.request.user.profile

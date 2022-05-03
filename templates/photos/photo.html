@@ -55,13 +55,13 @@
     <br>
     <hr> <br>
 
-    {% comment %} <form action="{% url 'like_photo' photo.id %}" method="POST">
+    <form action="{% url 'like_photo' photo.id %}" method="POST">
       {% csrf_token %}
       <button type="submit" name="photo_id" value="{{ photo.id }}"
         class="btn btn-sm btn-outline-secondary">Like</button> - {{ total_likes }} Likes
 
 
-    </form> {% endcomment %}
+    </form> 
 
 
                     <small class="text-muted photo-date"> Last updated {{photo.date}} by {{photo.author}}</small>

@@ -20,7 +20,7 @@ class Profile(models.Model):
     description = models.CharField(max_length=1000, null=True, blank=True)
     hobbies = models.CharField(max_length=50, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
-    phone = models.IntegerField(max_length=25, null=True, blank=True)
+    phone = models.IntegerField(null=True, blank=True)
     website = models.URLField(max_length=50, null=True, blank=True)
 
     def __str__(self):
