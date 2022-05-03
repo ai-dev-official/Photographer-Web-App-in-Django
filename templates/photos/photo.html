@@ -77,22 +77,27 @@
 
             <div class="p-4 mb-3  rounded">
                
-                <h4 class="font-italic font-weight-bolder">{{ comments_count }} COMMENTS</h4>
+                <h4 class="font-italic font-weight-bolder">{{ comment_count }} COMMENTS</h4>
                 <hr>
-                {% for comment in photo.comments.all %}
-                <div class="card p-4 my-3 bg-light rounded">
-                    <div class="comments" style="padding: 10px;">
-                        <p class="font-weight-bold">
-                            {{ comment.author }}
-                            <span class=" text-muted font-weight-normal">
-                                {{ comment.created_on }}
-                            </span>
-                        </p>
-                        {{ comment.body | linebreaks }}
-                    </div>
-                </div>
+               
 
-                {% endfor %}
+
+                  <p>
+                    {% get_comment_list for photo as comment_list %}
+                    {% for comment in comment_list %}
+                    <div class="card p-4 my-3 bg-light rounded">
+                      <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                          {{ comment.user_name }}
+                          <span class=" text-muted font-weight-normal">
+                            {{ comment.submit_date }}
+                          </span>
+                        </p>
+                        {{ comment.comment | linebreaks }}
+                      </div>
+                    </div>
+
+                    {% endfor %}
 
                 <div class="card-body">
                     {% get_comment_form for photo as form %}
