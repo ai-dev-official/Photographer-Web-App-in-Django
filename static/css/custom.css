@@ -38,16 +38,39 @@
 
   .imag-likes {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
     max-width: 120px;
     padding: 0 5px;
     text-align: center;
     font-weight: 700;
-    font-size: 3rem;
     color: #007bff;
     border-radius: 50%;
   
+}
+
+.visit-count {
+  position: absolute;
+  top: 22px;
+  left: 15px;
+  text-align: center;
+  color: #007bff;
+  border-radius: 50%;
+  color: crimson;
+  border-radius: 50%;
+  background: var(--light-color)
+  width:20px;
+  height:20px;
+}
+
+.visit-counter {
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  text-align: center;
+  color: #007bff;
+  border-radius: 50%;
+
 }
 
 .ph-likes {
@@ -71,15 +94,14 @@
 .imag-count {
   position: absolute;
   top: 0;
-  left: 30px;
-  max-width: 120px;
-  padding: 0 5px;
+  left: 15px;
   text-align: center;
-  font-weight: 700;
-  font-size: 1rem;
-  color: #ffffff;
+  color: crimson;
   border-radius: 50%;
-
+border-radius: 50%;
+background: var(--light-color)
+width:20px;
+height:20px;
 }
 
   button .bx {

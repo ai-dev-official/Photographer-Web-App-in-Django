@@ -59,7 +59,7 @@ class Photo(models.Model):
         verbose_name_plural = 'photos'
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.title)
         super(Photo, self).save(*args, **kwargs)
 
     def total_likes(self):

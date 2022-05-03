@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Photo
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -5,6 +6,7 @@ from django.views.generic import UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required 
 from django.http import HttpResponseRedirect
+
 
 
 @login_required
@@ -47,6 +49,10 @@ def gallery(request):
 @login_required
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
+    photo.visits = photo.visits + 1
+    photo.last_visit = datetime.now()
+    photo.save()
+
     stuff = get_object_or_404(Photo, id=pk)
     total_likes = stuff.total_likes()
     

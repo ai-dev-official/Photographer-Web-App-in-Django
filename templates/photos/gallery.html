@@ -75,16 +75,21 @@
     {% for photo in photos %}
     <div class="col-md-4 col-sm-6 col-xs-6 no-gutters border p-gallery">
       <div class="card shadow-0 m-5 card-m-add">
+        <a href="{% url 'photo' photo.id %}">
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
           <img src="{{photo.image.url}}" class="img-fluid card-img-top imag-thumbnail" />
           <small class="imag-author">{{photo.author}}</small>
           <i class='imag-likes bx bx-like' ></i>
           <small class="imag-count">{{ photo.total_likes }}</small>
+          
+          <i class="visit-counter fa fa-eye" aria-hidden="true"></i>
+          <small class="visit-count">{{ photo.visits }}</small>
+
           <a href="{% url 'photo' photo.id %}">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
           </a>
         </div>
-
+      </a>
       </div>
       <div class="card-body p-5 card-m-add">
         <h5 class="card-title">{{photo.title}}</h5>
