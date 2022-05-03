@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <form class="mt-2" action="{% url 'like_photo' photo.id %}" method="POST">
+            <form class="mt-2" action="{% url 'like_photo' photo.pk %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" name="photo_id" value="{{ photo.id }}"
                     class="btn btn-sm btn-outline-secondary">Like</button> 

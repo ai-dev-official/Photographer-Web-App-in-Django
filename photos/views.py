@@ -12,7 +12,7 @@ def likeView(request, pk):
     #photo = Photo.objects.get(id=pk)
     photo = get_object_or_404(Photo, id=request.POST.get('photo_id'))
     photo.likes.add(request.user)
-    return HttpResponseRedirect(reverse('photo', args=[str(pk)]))
+    return HttpResponseRedirect(reverse('photo', args=[pk]))
 
 @login_required
 def gallery(request):
