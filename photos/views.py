@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Photo
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic import UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required 
 from django.http import HttpResponseRedirect
@@ -12,7 +12,7 @@ def likeView(request, pk):
     #photo = Photo.objects.get(id=pk)
     photo = get_object_or_404(Photo, id=request.POST.get('photo_id'))
     photo.likes.add(request.user)
-    return HttpResponseRedirect(reverse('photo', args=[pk]))
+    return HttpResponseRedirect(reverse('photo', args=[str(pk)]))
 
 @login_required
 def gallery(request):
@@ -27,22 +27,33 @@ def gallery(request):
     return render(request, 'photos/gallery.html', context)
 
 
-class PhotoDetailView(DeleteView):
-    model = Photo
-    template_name = 'photos/photo.html'
+# class PhotoDetailView(DetailView):
+#     model = Photo
+#     template_name = 'photos/photo.html'
 
-    def get_context_data(self, *args, **kwargs):
-        categories = Category.objects.all()
-        context = super(PhotoDetailView, self).get_context_data
-        stuff = get_object_or_404(Photo, id=self.kwargs['pk'])
-        total_likes = stuff.total_likes()
-        context = {'total_likes': total_likes}
-        return context
+#     def get_context_data(self, *args, **kwargs):
+#         cat_menu = Category.objects.all()
+#         context = super(PhotoDetailView, self).get_context_data
+
+
+#         stuff = get_object_or_404(Photo, id=self.kwargs['pk'])
+#         total_likes = stuff.total_likes()
+#         context = {
+#             "cat_menu" : cat_menu,
+#             "total_likes" : total_likes
+#         }
+#         return context
 
 @login_required
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
-    return render(request, 'photos/photo.html', {'photo': photo})
+    stuff = get_object_or_404(Photo, id=pk)
+    total_likes = stuff.total_likes()
+    
+    context = {
+            "total_likes" : total_likes
+        }
+    return render(request, 'photos/photo.html', {'photo': photo, 'total_like': total_likes})
 
 @login_required
 def addPhoto(request):

@@ -78,6 +78,8 @@
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
           <img src="{{photo.image.url}}" class="img-fluid card-img-top imag-thumbnail" />
           <small class="imag-author">{{photo.author}}</small>
+          <i class='imag-likes bx bx-like' ></i>
+          <small class="imag-count">{{ photo.total_likes }}</small>
           <a href="{% url 'photo' photo.id %}">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
           </a>

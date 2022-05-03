@@ -36,6 +36,57 @@
     border: none;
   }
 
+  .imag-likes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 120px;
+    padding: 0 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #007bff;
+    border-radius: 50%;
+  
+}
+
+.ph-likes {
+  color: #007bff;
+  font-size: 1.5rem;
+}
+
+.ph-like {
+  color: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.ph-click {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+}
+
+.imag-count {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  max-width: 120px;
+  padding: 0 5px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 50%;
+
+}
+
+  button .bx {
+      font-size: 2rem;
+  }
+  
+
   #comment-preview, #id_honeypot, #div_id_honeypot {
     display: none;
   }
@@ -61,22 +112,18 @@
 }
 
 
-.navbar {
-  background-color: #fff0;
-  color: var(--light-color);
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 2rem;
-  /* -webkit-box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-  -moz-box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15); */
-  }
 
   
   .nav-item .active {
     position: relative;
     color: var(--dark-color);
 }
+
+.navbar {
+ background-color: var(--light-color);
+ color: var(--dark-color);
+  }
+
 
 /* .nav-item .active::before {
     
@@ -857,6 +904,29 @@ main .main-login, main .btn {
 
   @media screen and ( min-width: 200px){
 
+    .navbar {
+      background-color: #fff0;
+      color: var(--light-color);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
+  }
+
+  .show{
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid var(--dark-color);
+  }
+
+  .sticky {
+   
+    background: #fff;
+    color: #555;
+    box-shadow: 0 5px 20px rgba(0, 0, 0,0.05);
+  }
+
     #logo {
       font-size: 16px;
       letter-spacing: 0;
@@ -1010,6 +1080,13 @@ main .main-login, main .btn {
       padding-right: 5rem;
       padding-top: 2rem !important;
     }
+
+    .navbar {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 2rem;
+      }
+    
     
   }
     

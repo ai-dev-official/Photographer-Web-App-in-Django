@@ -37,8 +37,9 @@
 
             <form class="mt-2" action="{% url 'like_photo' photo.pk %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" name="photo_id" value="{{ photo.id }}"
-                    class="btn btn-sm btn-outline-secondary">Like</button> 
+                <button type="submit" name="photo_id" value="{{ photo.id }}",
+                    class="ph-click"><i class='ph-likes bx bx-like'></i>
+                </button> 
                 </form> 
 
 
@@ -66,8 +67,8 @@
                     <br>
                     <hr>
 
-                    <div class="">
-                         Likes ({{ total_likes }})
+                    <div>
+                        <span class="ph-like">{{ photo.total_likes }}</span> <i class='ph-likes bx bx-like' ></i> Likes 
                     </div>
                     
 

@@ -59,7 +59,7 @@
                 data-bs-toggle="dropdown">Account</a>
             <div class="dropdown-menu dropdown-menu-end">
               <a class="dropdown-item" href="{% url 'login' %}" class="btn btn-st btn-outline-secondary">Login</a>
-              <a class="dropdown-item" href="{% url 'signup' %}" role="button">Sign up</a>
+              <a class="dropdown-item" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
            </div>
         </ul>
           {% endif %}

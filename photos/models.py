@@ -66,7 +66,7 @@ class Photo(models.Model):
         return self.likes.count()
 
     def __str__(self):
-        return self.title + ' | ' + str(self.category)
+        return self.title + ' | ' + str(self.author)
 
     def get_absolute_url(self):
         return reverse('photo', args=[str(self.id)])
