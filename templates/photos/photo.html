@@ -79,7 +79,7 @@
 
                 {% get_comment_count for photo as comment_count %}
                
-                <h4 class="font-italic font-weight-bolder">{{ comment_count }} COMMENTS</h4>
+                <h4 class="font-italic font-weight-bolder">COMMENTS ({{ comment_count }}) </h4>
                 <hr>
                
 
@@ -88,7 +88,7 @@
                     {% get_comment_list for photo as comment_list %}
                     {% for comment in comment_list %}
                     <div class="card p-4 my-3 bg-light rounded">
-                      <div class="comments" style="padding: 10px;">
+                      <div class="comment" style="padding: 10px;">
                         <p class="font-weight-bold">
                           {{ comment.user_name }}
                           <span class=" text-muted font-weight-normal">
