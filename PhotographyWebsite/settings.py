@@ -1,3 +1,4 @@
+import os
 import environ
 
 from pathlib import Path
@@ -24,7 +25,7 @@ SECRET_KEY = 'django-insecure-jptv((pmo!nz(gos0#-qfn17xsr6(uhh)&=a17$5@w+x65xv1@
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'infinite-inlet-37223.herokuapp.com'
+   # 'infinite-inlet-37223.herokuapp.com'
 ]
 
 
@@ -143,6 +144,20 @@ STATICFILES_FINDERS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
