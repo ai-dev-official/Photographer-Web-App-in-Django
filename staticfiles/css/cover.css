@@ -28,7 +28,7 @@ html,
 body {
   height: 100%;
   background-color: #333; 
-  background-image:url("../images/thanos.jpg");
+  background-image:url("../images/thanos.webp");
   background-size: cover;
   top: 100;
   transition: 0.2s;
@@ -62,4 +62,8 @@ body {
 
 .cover .text-muted {
   color: #d2d026 !important;
+}
+
+#hint_id_password2 {
+  display: none;
 }
