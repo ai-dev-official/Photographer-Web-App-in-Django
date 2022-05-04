@@ -11,13 +11,27 @@
         <h1 class="display-1 text-center text-white fw-bold">Customer Service</h1>
     </div>
   </section>
+  {% comment %} {% if first_name %}
+  <section class="accessory section bd-container" id="accessory">
+    <div class="category__container   main__container container__grid">
+      <h1 class="text-center my_title">
+        Thanks {{ message_name }} for contacting us!
+    </h1>
+    <br>
+    <p>
+      We have received your message and will as soon as possible. An email confirmation has been sent to you.
+    </p>
 
+  </div>
+  </section>
+  {% else %} {% endcomment %}
+  
     <section class="accessory section bd-container" id="accessory">
       <div class="category__container   main__container container__grid">
         <h1 style="margin-left:80px">Customer Service</h1>
         <br>
 
-<div style="margin:80px">
+      <div style="margin:80px">
     
     <form method="post">
         {% csrf_token %}
@@ -25,7 +39,8 @@
         {{ form|crispy }}
         <button class="btn btn-outline-secondary btn-rounded nav_button" type="submit">Submit</button>
     </form>
-</div>
-      </div>
-      </section>
+   </div>
+  </div>
+  </section>
+      {% comment %} {% endif %} {% endcomment %}
 {% endblock content %}

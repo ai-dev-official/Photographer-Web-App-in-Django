@@ -1,4 +1,6 @@
 
+from email import message
+from django.conf import settings
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required 
@@ -8,6 +10,7 @@ from .models import Profile
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -65,7 +68,10 @@ class UserEditView(UpdateView):
     def get_object(self):
         return self.request.user.profile
 
-  
+
+
+
+
 
 @login_required
 def contact(request):
@@ -80,17 +86,35 @@ def contact(request):
                 'message': form.cleaned_data['message'],
             }
             message = "\n".join(body.values())
-
             try:
-                send_mail(subject, message, 'x00191169@mytudublin.ie',
-                          ['x00191169@mytudublin.ie'])
+                send_mail(subject, message, settings.EMAIL_HOST_USER,
+                          [settings.EMAIL_HOST_USER])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect("thanks")
-
     form = ContactForm()
     return render(request, "registration/customer__service.html", {'form': form})
 
+
+
+"""""
+@login_required
+def contact(request):
+    if request.method == "POST":
+              message = request.POST['message']
+     
+            #send mail
+              send_mail(
+                  'Customer Service',
+                  message,
+                  settings.EMAIL_HOST_USER,
+                  'azubuike.learn@gmail.com',
+                  fail_silently=False
+                
+              )
+              return render(request, "registration/customer__service.html", {})
+    
+ """
 
 # class ProfilePageView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
 #     model = Profile

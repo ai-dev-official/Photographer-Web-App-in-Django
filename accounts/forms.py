@@ -48,7 +48,8 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['profile_image', 'date_of_birth', 'fav_author', 'description', 'hobbies', 'city', 'phone', 'website']
+        fields = ['profile_image', 'date_of_birth', 'fav_author',
+                  'description', 'hobbies', 'city', 'phone', 'website']
 
 
 class SignUpForm(UserCreationForm):
@@ -72,9 +73,10 @@ class SignUpForm(UserCreationForm):
                   'email', 'password1', 'password2']
 
 
-
 class ContactForm(forms.Form):
-	first_name = forms.CharField(max_length = 25)
-	last_name = forms.CharField(max_length = 25)
-	email_address = forms.EmailField(max_length = 50)
-	message = forms.CharField(widget = forms.Textarea, max_length = 1000)
+   # message_name = forms.CharField(max_length=25)
+    first_name = forms.CharField(max_length=25)
+    last_name = forms.CharField(max_length=25)
+    email_address = forms.EmailField(max_length=50)
+   # message_name = forms.CharField(max_length=25)
+    message = forms.CharField(widget=forms.Textarea, max_length=1000)
