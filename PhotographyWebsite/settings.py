@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-jptv((pmo!nz(gos0#-qfn17xsr6(uhh)&=a17$5@w+x65xv1@
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'infinite-inlet-37223.herokuapp.com'
+   # 'infinite-inlet-37223.herokuapp.com'
 ]
 
 
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'photos.apps.PhotosConfig',
 
     # 3rd party
-    'crispy_forms',
+    "crispy_forms",
+    "crispy_bootstrap4",
     'bootstrap4',
     # 'django_comments',
 ]
@@ -166,7 +167,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTH_USER_MODEL = 'accounts.CustomUser'
 
-#CRISPY_TEMPLATE_PACK = 'bootstrap5'
+# CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
